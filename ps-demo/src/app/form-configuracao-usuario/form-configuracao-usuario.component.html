@@ -1,9 +1,9 @@
 <div class="container">
     <h2>Configurações de Usuário</h2>
-    <form #form="ngForm">
+    <form #form="ngForm" ngNativeValidate>
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input id="nome" name="nome" class="form-control" [(ngModel)]="configuracoesUsuario.nome">
+            <input id="nome" name="nome" class="form-control" [(ngModel)]="configuracoesUsuario.nome" required>
         </div>
 
         <div class="form-check form-group">
@@ -41,7 +41,8 @@
 
         <div class="form-group">
             <label for="tipoInscricao">Tipo de Inscrição</label>
-            <select class="form-control" id="tipoInscricao" name="tipoInscricao" [(ngModel)]="configuracoesUsuario.tipoAssinatura">
+            <select class="form-control" id="tipoInscricao" name="tipoInscricao"
+                [(ngModel)]="configuracoesUsuario.tipoAssinatura">
                 <option>Mensal</option>
                 <option>Anual</option>
                 <option>Vitalício</option>
@@ -50,7 +51,8 @@
 
         <div class="form-group">
             <label for="observacoes">Observações</label>
-            <textarea id="observacoes" name="observacoes" class="form-control" rows="3" [(ngModel)]="configuracoesUsuario.observacoes"></textarea>
+            <textarea id="observacoes" name="observacoes" class="form-control" rows="3"
+                [(ngModel)]="configuracoesUsuario.observacoes"></textarea>
         </div>
 
         <button class="btn btn-primary">Enviar</button>

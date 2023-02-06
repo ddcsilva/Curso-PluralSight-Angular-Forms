@@ -9,11 +9,11 @@ import { ConfiguracoesUsuario } from '../data/configuracoes-usuario';
 export class FormConfiguracaoUsuarioComponent implements OnInit {
 
   configuracoesUsuarioOriginal: ConfiguracoesUsuario = {
-    nome: "Danilo",
-    ofertaEmail: true,
-    tema: "escuro",
-    tipoAssinatura: "Anual",
-    observacoes: "Algumas observações..."
+    nome: "",
+    ofertaEmail: false,
+    tema: "",
+    tipoAssinatura: "",
+    observacoes: ""
   };
 
   configuracoesUsuario: ConfiguracoesUsuario = { ...this.configuracoesUsuarioOriginal };
