@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ConfiguracoesUsuario } from './configuracoes-usuario';
@@ -7,9 +8,11 @@ import { ConfiguracoesUsuario } from './configuracoes-usuario';
 })
 export class DadosService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  postFormularioConfiguracoesUsuario(configuracoesUsuario: ConfiguracoesUsuario) : Observable<ConfiguracoesUsuario> {
-    return of(configuracoesUsuario);
+  postFormularioConfiguracoesUsuario(configuracoesUsuario: ConfiguracoesUsuario) : Observable<any> {
+    return this.http.post("url", configuracoesUsuario)
+    
+    // return of(configuracoesUsuario);
   }
 }
