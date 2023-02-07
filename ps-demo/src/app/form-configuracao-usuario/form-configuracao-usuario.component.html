@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="nome">Nome</label>
             <input id="nome" name="nome" class="form-control" [(ngModel)]="configuracoesUsuario.nome" required
-                #campoNome="ngModel" [class.campo-erro]="form.submitted && campoNome.invalid">
+                #campoNome="ngModel" (blur)="onBlur(campoNome)">
             <div [hidden]="!form.submitted || campoNome.valid" class="alert alert-danger">
                 Insira um nome
             </div>
